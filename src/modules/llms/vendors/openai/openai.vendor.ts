@@ -14,7 +14,7 @@ import { OpenAISourceSetup } from './OpenAISourceSetup';
 
 // shared constants
 export const FALLBACK_LLM_RESPONSE_TOKENS = 1024;
-export const FALLBACK_LLM_TEMPERATURE = 0.0;
+export const FALLBACK_LLM_TEMPERATURE = 0.5;
 
 
 // special symbols
@@ -36,14 +36,14 @@ export interface LLMOptionsOpenAI {
 
 export const ModelVendorOpenAI: IModelVendor<SourceSetupOpenAI, OpenAIAccessSchema, LLMOptionsOpenAI> = {
   id: 'openai',
-  name: 'noskhe-v',
+  name: 'Noskhe',
   rank: 10,
   location: 'cloud',
   instanceLimit: 5,
   hasBackendCap: () => backendCaps().hasLlmOpenAI,
 
   // components
-  //Icon: OpenAIIcon,
+  // Icon: OpenAIIcon,
   SourceSetupComponent: OpenAISourceSetup,
   LLMOptionsComponent: OpenAILLMOptions,
 
