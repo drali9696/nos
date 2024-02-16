@@ -49,8 +49,8 @@ export function DallESettings() {
       title='Model'
       description={dalleModelId === 'dall-e-2' ? 'Older' : 'Newer'}
       options={[
-        { value: 'dall-e-2', label: 'DALL·E 2' },
-        { value: 'dall-e-3', label: 'DALL·E 3' },
+        { value: 'dall-e-2', label: 'noskhe-img-v1-1' },
+        { value: 'dall-e-3', label: 'noskhe-img-v1-2' },
       ]}
       value={dalleModelId} onChange={setDalleModelId}
     />
@@ -101,21 +101,21 @@ export function DallESettings() {
       <FormLabelStart title='Better Prompt'
                       description={dalleNoRewrite ? 'No Rewrite' : 'Default'}
                       tooltip={<>
-                        OpenAI improves the prompt by rewriting it by default.
+                        {/* OpenAI improves the prompt by rewriting it by default.
                         This can be disabled to get more control over the prompt.
                         See <Link href='https://platform.openai.com/docs/guides/images/prompting' target='_blank'>
-                        This OpenAI document </Link>
+                        This OpenAI document </Link> */}
                       </>}
       />
       <Switch checked={!dalleNoRewrite} onChange={handleDalleNoRewriteChange}
               startDecorator={dalleNoRewrite ? 'No' : 'Improve'} />
     </FormControl>}
 
-    {advanced.on && <FormControl orientation='horizontal' sx={{ justifyContent: 'space-between' }}>
+    {/* {advanced.on && <FormControl orientation='horizontal' sx={{ justifyContent: 'space-between' }}>
       <FormLabelStart title='Cost per Image'
                       description={<Link href='https://openai.com/pricing' target='_blank' noLinkStyle sx={{ textDecoration: 'none' }}>OpenAI Pricing </Link>} />
       <Typography>$ {costPerImage}</Typography>
-    </FormControl>}
+    </FormControl>} */}
 
 
     <FormLabelStart title={advanced.on ? 'Hide Advanced' : 'Advanced'} onClick={advanced.toggle} />
