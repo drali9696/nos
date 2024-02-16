@@ -22,7 +22,7 @@ import WorkspacesIcon from '@mui/icons-material/Workspaces';
 import WorkspacesOutlinedIcon from '@mui/icons-material/WorkspacesOutlined';
 // Link icons
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { DiscordIcon } from '~/common/components/icons/3rdparty/DiscordIcon';
+import { DiscordIcon } from '~/common/components/icons/DiscordIcon';
 // Modal icons
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -131,16 +131,16 @@ export const navItems: {
       route: '/patterns',
       _delete: true,
     },
-    {
-      name: 'Workspace',
-      icon: WorkspacesOutlinedIcon,
-      iconActive: WorkspacesIcon,
-      type: 'app',
-      route: '/workspace',
-      hideDrawer: true,
-      hideOnMobile: true,
-      // _delete: true,
-    },
+    // {
+    //   name: 'Workspace',
+    //   icon: WorkspacesOutlinedIcon,
+    //   iconActive: WorkspacesIcon,
+    //   type: 'app',
+    //   route: '/workspace',
+    //   hideDrawer: true,
+    //   hideOnMobile: true,
+    //   // _delete: true,
+    // },
     // <-- divider here -->
     {
       name: SPECIAL_DIVIDER,
@@ -175,15 +175,15 @@ export const navItems: {
       hideIcon: hasNoChatLinkItems,
       hideNav: hasNoChatLinkItems,
     },
-    {
-      name: 'News',
-      icon: EventNoteOutlinedIcon,
-      iconActive: EventNoteIcon,
-      type: 'app',
-      route: '/news',
-      hideBar: true,
-      hideDrawer: true,
-    },
+    // {
+    //   name: 'News',
+    //   icon: EventNoteOutlinedIcon,
+    //   iconActive: EventNoteIcon,
+    //   type: 'app',
+    //   route: '/news',
+    //   hideBar: true,
+    //   hideDrawer: true,
+    // },
   ],
 
   // Modals
@@ -216,12 +216,12 @@ export const navItems: {
       icon: DiscordIcon,
       href: Brand.URIs.SupportInvite,
     },
-    {
-      type: 'extLink',
-      name: 'GitHub',
-      icon: GitHubIcon,
-      href: Brand.URIs.OpenRepo,
-    },
+    // {
+    //   type: 'extLink',
+    //   name: 'GitHub',
+    //   icon: GitHubIcon,
+    //   href: Brand.URIs.OpenRepo,
+    // },
   ],
 
 };
