@@ -172,7 +172,7 @@ export function SettingsModal(props: {
             <Topic icon='🎙️' title='Voice settings'>
               <VoiceSettings />
             </Topic>
-            <Topic icon='📢' title='ElevenLabs API'>
+            <Topic icon='📢' title='noskhe-voice key'>
               <ElevenlabsSettings />
             </Topic>
           </Topics>
@@ -183,10 +183,10 @@ export function SettingsModal(props: {
             <Topic>
               <T2ISettings />
             </Topic>
-            <Topic icon='🖍️️' title='OpenAI DALL·E' startCollapsed>
+            <Topic icon='🖍️️' title='noskhe-img-v1' startCollapsed>
               <DallESettings />
             </Topic>
-            <Topic icon='🖍️️' title='Prodia API' startCollapsed>
+            <Topic icon='🖍️️' title='noskhe-img-v2' startCollapsed>
               <ProdiaSettings noSkipKey />
             </Topic>
           </Topics>
