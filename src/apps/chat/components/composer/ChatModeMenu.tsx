@@ -21,24 +21,24 @@ const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
     label: 'Chat',
     description: 'Persona replies',
   },
-  // 'append-user': {
-  //   label: 'Write',
-  //   description: 'Appends a message',
-  //   shortcut: 'Alt + Enter',
-  // },
-  'generate-image': {
-    label: 'Draw',
-    description: 'AI Image Generation',
-    requiresTTI: true,
+  'append-user': {
+    // label: 'Write',
+    // description: 'Appends a message',
+    // shortcut: 'Alt + Enter',
   },
-  // 'generate-best-of': {
-  //   label: 'Best-Of', // Best of, Auto-Prime, Top Pick, Select Best
-  //   description: 'Smarter: best of multiple replies',
-  // },
-  // 'generate-react': {
-  //   label: 'Reason + Act', //  · α
-  //   description: 'Answers questions in multiple steps',
-  // },
+  'generate-image': {
+    // label: 'Draw',
+    // description: 'AI Image Generation',
+    // requiresTTI: true,
+  },
+  'generate-best-of': {
+    // label: 'Best-Of', // Best of, Auto-Prime, Top Pick, Select Best
+    // description: 'Smarter: best of multiple replies',
+  },
+  'generate-react': {
+    // label: 'Reason + Act', //  · α
+    // description: 'Answers questions in multiple steps',
+  },
 };
 
 
