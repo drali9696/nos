@@ -104,17 +104,17 @@ export const navItems: {
       hideDrawer: true,
       fullWidth: true,
     },
-    {
-      name: 'Draw',
-      barTitle: 'Generate Images',
-      icon: FormatPaintOutlinedIcon,
-      iconActive: FormatPaintIcon,
-      type: 'app',
-      route: '/draw',
-      // hideOnMobile: true,
-      hideDrawer: true,
-      // _delete: true,
-    },
+    // {
+    //   name: 'Draw',
+    //   barTitle: 'Generate Images',
+    //   icon: FormatPaintOutlinedIcon,
+    //   iconActive: FormatPaintIcon,
+    //   type: 'app',
+    //   route: '/draw',
+    //   // hideOnMobile: true,
+    //   hideDrawer: true,
+    //   // _delete: true,
+    // },
     {
       name: 'Cortex',
       icon: AutoAwesomeOutlinedIcon,
@@ -204,12 +204,12 @@ export const navItems: {
 
   // External links
   links: [
-    {
-      type: 'extLink',
-      name: 'X',
-      icon: TwitterIcon,
-      href: 'https://twitter.com',
-    },
+    // {
+    //   type: 'extLink',
+    //   name: 'X',
+    //   icon: TwitterIcon,
+    //   href: 'https://twitter.com',
+    // },
     {
       type: 'extLink',
       name: 'Discord',
