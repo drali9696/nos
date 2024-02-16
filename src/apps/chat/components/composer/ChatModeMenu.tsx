@@ -22,22 +22,22 @@ const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
     description: 'Persona replies',
   },
   'append-user': {
-    // label: 'Write',
-    // description: 'Appends a message',
-    // shortcut: 'Alt + Enter',
+    label: '',
+    description: '',
+    shortcut: '',
   },
   'generate-image': {
-    // label: 'Draw',
-    // description: 'AI Image Generation',
-    // requiresTTI: true,
+    label: '',
+    description: '',
+    requiresTTI: true,
   },
   'generate-best-of': {
-    // label: 'Best-Of', // Best of, Auto-Prime, Top Pick, Select Best
-    // description: 'Smarter: best of multiple replies',
+    label: '', // Best of, Auto-Prime, Top Pick, Select Best
+    description: '',
   },
   'generate-react': {
-    // label: 'Reason + Act', //  · α
-    // description: 'Answers questions in multiple steps',
+    label: '', //  · α
+    description: '',
   },
 };
 
