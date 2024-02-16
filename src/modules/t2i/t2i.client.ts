@@ -130,7 +130,7 @@ function getTextToImageProviders(openAIModelSources: OpenAIModelSource[], hasPro
   const hasProdiaServer = backendCaps().hasImagingProdia;
   providers.push({
     id: 'prodia',
-    label: 'Prodia',
+    label: 'noskhe-img-2',
     painter: 'Prodia',
     description: 'Prodia\'s models',
     configured: hasProdiaServer || hasProdiaClientModels,
