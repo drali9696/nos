@@ -498,10 +498,10 @@ export function Composer(props: {
       : isReAct ? 'Multi-step reasoning question...'
         : isBestOf ? 'Multi-chat with this persona...'
           : props.isDeveloperMode ? 'Chat with me' + (isDesktop ? ' · drop source' : '') + ' · attach code...'
-            : props.capabilityHasT2I ? 'Chat · /react · /draw · drop files...'
+            : props.capabilityHasT2I ? 'Ask any medical question you have in any language you prefer, and I will respond based on references.'
               : 'Chat · /react · drop files...';
   if (isDesktop && explainShiftEnter)
-    textPlaceholder += !enterIsNewline ? '\nShift+Enter to add a new line' : '\nShift+Enter to send';
+    textPlaceholder += !enterIsNewline ? '\nShift+Enter to add a new line\nThis program was created by Dr. Ali Erfanizadeh and the website noskhe.chat' : '\nShift+Enter to send';
 
   return (
     <Box aria-label='User Message' component='section' sx={props.sx}>
