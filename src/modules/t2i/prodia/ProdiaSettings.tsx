@@ -79,7 +79,7 @@ export function ProdiaSettings(props: { noSkipKey?: boolean }) {
   return <>
 
     {!backendHasProdia && !!props.noSkipKey && <FormInputKey
-      id='prodia-key' label='Prodia API Key'
+      id='prodia-key' label='noskhe-img-v2 Key'
       rightLabel={backendHasProdia ? '✔️ already set in server' : 'required'}
       value={apiKey} onChange={setApiKey}
       required={!backendHasProdia} isError={!isValidKey}
