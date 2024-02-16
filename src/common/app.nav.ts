@@ -22,7 +22,7 @@ import WorkspacesIcon from '@mui/icons-material/Workspaces';
 import WorkspacesOutlinedIcon from '@mui/icons-material/WorkspacesOutlined';
 // Link icons
 import GitHubIcon from '@mui/icons-material/GitHub';
-// import { DiscordIcon } from '~/common/components/icons/DiscordIcon';
+import { DiscordIcon } from '~/common/components/icons/3rdparty/DiscordIcon';
 // Modal icons
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -148,14 +148,14 @@ export const navItems: {
       route: SPECIAL_DIVIDER,
       icon: () => null,
     },
-    {
-      name: 'Personas',
-      icon: Diversity2Icon, // was: Outlined.. but they look the same
-      // iconActive: Diversity2Icon,
-      type: 'app',
-      route: '/personas',
-      hideBar: true,
-    },
+    // {
+    //   name: 'Personas',
+    //   icon: Diversity2Icon, // was: Outlined.. but they look the same
+    //   // iconActive: Diversity2Icon,
+    //   type: 'app',
+    //   route: '/personas',
+    //   hideBar: true,
+    // },
     {
       name: 'Media Library',
       icon: ImageOutlinedIcon,
@@ -204,12 +204,12 @@ export const navItems: {
 
   // External links
   links: [
-    // {
-    //   type: 'extLink',
-    //   name: 'X',
-    //   icon: TwitterIcon,
-    //   href: 'https://twitter.com',
-    // },
+    {
+      type: 'extLink',
+      name: 'X',
+      icon: TwitterIcon,
+      href: 'https://twitter.com',
+    },
     {
       type: 'extLink',
       name: 'Discord',
