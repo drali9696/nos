@@ -46,15 +46,15 @@ export function OpenAISourceSetup(props: { sourceId: DModelSourceId }) {
   return <>
 
     <FormInputKey
-      id='openai-key' label='API Key'
+      id='openai-key' label=' Key'
       rightLabel={<>{needsUserKey
-        ? !oaiKey && <><Link level='body-sm' href='https://platform.openai.com/account/api-keys' target='_blank'>create Key</Link> and <Link level='body-sm' href='https://openai.com/waitlist/gpt-4-api' target='_blank'>apply to GPT-4</Link></>
+        ? !oaiKey && <><Link level='body-sm' href='https://noskhe.chat' target='_blank'>Go to noskhe.chat</Link> and <Link level='body-sm' href='https://noskhe.chat' target='_blank'>Get Key</Link></>
         : '✔️ already set in server'
-      } {oaiKey && keyValid && <Link level='body-sm' href='https://platform.openai.com/account/usage' target='_blank'>check usage</Link>}
+      } {oaiKey && keyValid && <Link level='body-sm' href='https://noskhe.chat' target='_blank'>noskhe.chat</Link>}
       </>}
       value={oaiKey} onChange={value => updateSetup({ oaiKey: value })}
       required={needsUserKey} isError={keyError}
-      placeholder='sk-...'
+      placeholder='key'
     />
 
     {advanced.on && <FormTextField
