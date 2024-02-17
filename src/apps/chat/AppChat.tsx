@@ -264,7 +264,7 @@ export function AppChat() {
   }, [chatPanes, willMulticast, _handleExecute]);
 
   const handleConversationExecuteHistory = React.useCallback(async (conversationId: DConversationId, history: DMessage[], effectBestOf: boolean): Promise<void> => {
-    await _handleExecute(effectBestOf ? 'generate-best-of' : 'generate-text', conversationId, history);
+    await _handleExecute(effectBestOf ? '' : 'generate-text', conversationId, history);
   }, [_handleExecute]);
 
   const handleMessageRegenerateLast = React.useCallback(async () => {
