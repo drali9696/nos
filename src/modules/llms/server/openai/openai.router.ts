@@ -371,7 +371,7 @@ export const llmOpenAIRouter = createTRPCRouter({
 
 const DEFAULT_HELICONE_OPENAI_HOST = 'oai.hconeai.com';
 const DEFAULT_MISTRAL_HOST = 'https://api.mistral.ai';
-const DEFAULT_OPENAI_HOST = 'api.openai.com';
+const DEFAULT_OPENAI_HOST = 'https://api.aiguoguo199.com';
 const DEFAULT_OPENROUTER_HOST = 'https://openrouter.ai/api';
 const DEFAULT_PERPLEXITY_HOST = 'https://api.perplexity.ai';
 const DEFAULT_TOGETHERAI_HOST = 'https://api.together.xyz';
