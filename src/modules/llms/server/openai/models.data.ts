@@ -9,22 +9,22 @@ import { wireTogetherAIListOutputSchema } from '~/modules/llms/server/openai/tog
 // [Azure] / [OpenAI]
 const _knownOpenAIChatModels: ManualMappings = [
   // GPT4 Vision
-  {
-    idPrefix: 'gpt-4-vision-preview',
-    label: 'GPT-4 Turbo · Vision',
-    description: 'GPT-4 Turbo model featuring improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Returns a maximum of 4,096 output tokens.',
-    contextWindow: 128000,
-    maxCompletionTokens: 4096,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn, LLM_IF_OAI_Vision],
-    hidden: true, // because no 'image input' support yet
-    isLatest: true,
-  },
+  // {
+  //   idPrefix: 'gpt-4-vision-preview',
+  //   label: 'GPT-4 Turbo · Vision',
+  //   description: 'GPT-4 Turbo model featuring improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Returns a maximum of 4,096 output tokens.',
+  //   contextWindow: 128000,
+  //   maxCompletionTokens: 4096,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn, LLM_IF_OAI_Vision],
+  //   hidden: true, // because no 'image input' support yet
+  //   isLatest: true,
+  // },
 
   // GPT4 Turbo
   {
     idPrefix: 'gpt-4-0125-preview',
-    label: 'GPT-4 Turbo (0125)',
-    description: 'The latest GPT-4 model intended to reduce cases of “laziness” where the model doesn’t complete a task.',
+    label: 'version 2.1',
+    description: '',
     contextWindow: 128000,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
@@ -32,18 +32,18 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-4-1106-preview',
-    label: 'GPT-4 Turbo (1106)',
-    description: '128k context, fresher knowledge, cheaper than GPT-4.',
+    label: 'version 2.2',
+    description: '',
     contextWindow: 128000,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
   },
   {
     idPrefix: 'gpt-4-turbo-preview',
-    label: 'GPT-4 Turbo',
-    description: 'Currently points to gpt-4-0125-preview.',
-    symLink: 'gpt-4-0125-preview',
-    hidden: true,
+    label: 'version 2.3',
+    description: '',
+    //symLink: 'gpt-4-0125-preview',
+   // hidden: true,
     // copied
     contextWindow: 128000,
     maxCompletionTokens: 4096,
@@ -51,78 +51,78 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
 
   // GPT4-32k's
-  {
-    idPrefix: 'gpt-4-32k-0613',
-    label: 'GPT-4 32k (0613)',
-    description: 'Snapshot of gpt-4-32 from June 13th 2023.',
-    contextWindow: 32768,
-    interfaces: [LLM_IF_OAI_Chat],
-    isLatest: true,
-  },
-  {
-    idPrefix: 'gpt-4-32k-0314',
-    label: 'GPT-4 32k (0314)',
-    description: 'Snapshot of gpt-4-32 from March 14th 2023. Will be deprecated on June 13th 2024 at the earliest.',
-    contextWindow: 32768,
-    interfaces: [LLM_IF_OAI_Chat],
-    hidden: true,
-  },
-  {
-    idPrefix: 'gpt-4-32k',
-    label: 'GPT-4 32k',
-    description: 'Currently points to gpt-4-32k-0613.',
-    symLink: 'gpt-4-32k-0613',
-    // copied
-    contextWindow: 32768,
-    interfaces: [LLM_IF_OAI_Chat],
-    hidden: true,
-  },
+  // {
+  //   idPrefix: 'gpt-4-32k-0613',
+  //   label: 'GPT-4 32k (0613)',
+  //   description: '',
+  //   contextWindow: 32768,
+  //   interfaces: [LLM_IF_OAI_Chat],
+  //   isLatest: true,
+  // },
+  // {
+  //   idPrefix: 'gpt-4-32k-0314',
+  //   label: 'GPT-4 32k (0314)',
+  //   description: '',
+  //   contextWindow: 32768,
+  //   interfaces: [LLM_IF_OAI_Chat],
+  //   hidden: true,
+  // },
+  // {
+  //   idPrefix: 'gpt-4-32k',
+  //   label: 'GPT-4 32k',
+  //   description: '',
+  //   symLink: 'gpt-4-32k-0613',
+  //   // copied
+  //   contextWindow: 32768,
+  //   interfaces: [LLM_IF_OAI_Chat],
+  //   hidden: true,
+  // },
 
-  // GPT4's
-  {
-    idPrefix: 'gpt-4-0613',
-    label: 'GPT-4 (0613)',
-    description: 'Snapshot of gpt-4 from June 13th 2023 with function calling data. Data up to Sep 2021.',
-    contextWindow: 8192,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    isLatest: true,
-  },
-  {
-    idPrefix: 'gpt-4-0314',
-    label: 'GPT-4 (0314)',
-    description: 'Snapshot of gpt-4 from March 14th 2023 with function calling data. Data up to Sep 2021.',
-    contextWindow: 8192,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
-  },
-  {
-    idPrefix: 'gpt-4',
-    label: 'GPT-4',
-    description: 'Currently points to gpt-4-0613.',
-    symLink: 'gpt-4-0613',
-    // copied
-    contextWindow: 8192,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
-  },
+  // // GPT4's
+  // {
+  //   idPrefix: 'gpt-4-0613',
+  //   label: 'GPT-4 (0613)',
+  //   description: '',
+  //   contextWindow: 8192,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  //   isLatest: true,
+  // },
+  // {
+  //   idPrefix: 'gpt-4-0314',
+  //   label: 'GPT-4 (0314)',
+  //   description: '',
+  //   contextWindow: 8192,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  //   hidden: true,
+  // },
+  // {
+  //   idPrefix: 'gpt-4',
+  //   label: 'GPT-4',
+  //   description: '',
+  //   symLink: 'gpt-4-0613',
+  //   // copied
+  //   contextWindow: 8192,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  //   hidden: true,
+  // },
 
 
   // 3.5-Turbo-Instruct (Not for Chat)
-  {
-    idPrefix: 'gpt-3.5-turbo-instruct',
-    label: '3.5-Turbo Instruct',
-    description: 'Similar capabilities as GPT-3 era models. Compatible with legacy Completions endpoint and not Chat Completions.',
-    contextWindow: 4097,
-    interfaces: [/* NO: LLM_IF_OAI_Chat,*/ LLM_IF_OAI_Complete],
-    hidden: true,
-  },
+  // {
+  //   idPrefix: 'gpt-3.5-turbo-instruct',
+  //   label: '3.5-Turbo Instruct',
+  //   description: '',
+  //   contextWindow: 4097,
+  //   interfaces: [/* NO: LLM_IF_OAI_Chat,*/ LLM_IF_OAI_Complete],
+  //   hidden: true,
+  // },
 
 
   // 3.5-Turbo-16k's
   {
     idPrefix: 'gpt-3.5-turbo-0125',
-    label: '3.5-Turbo (0125)',
-    description: 'The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats and a fix for a bug which caused a text encoding issue for non-English language function calls.',
+    label: 'version 1.1',
+    description: '',
     contextWindow: 16385,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
@@ -130,92 +130,92 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-3.5-turbo-1106',
-    label: '3.5-Turbo (1106)',
-    description: 'The latest GPT-3.5 Turbo model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more.',
+    label: 'version 1.2',
+    description: '',
     contextWindow: 16385,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
+    //hidden: true,
   },
-  {
-    idPrefix: 'gpt-3.5-turbo-16k-0613',
-    label: '3.5-Turbo 16k (0613)',
-    description: 'Snapshot of gpt-3.5-turbo-16k from June 13th 2023.',
-    contextWindow: 16385,
-    interfaces: [LLM_IF_OAI_Chat],
-    hidden: true,
-    isLegacy: true,
-  },
+  // {
+  //   idPrefix: 'gpt-3.5-turbo-16k-0613',
+  //   label: '3.5-Turbo 16k (0613)',
+  //   description: '',
+  //   contextWindow: 16385,
+  //   interfaces: [LLM_IF_OAI_Chat],
+  //   hidden: true,
+  //   isLegacy: true,
+  // },
   {
     idPrefix: 'gpt-3.5-turbo-16k',
-    label: '3.5-Turbo 16k',
-    description: 'Currently points to gpt-3.5-turbo-16k-0613.',
-    symLink: 'gpt-3.5-turbo-16k-0613',
+    label: 'version 1.3',
+    description: '',
+   /// symLink: 'gpt-3.5-turbo-16k-0613',
     // copied
     contextWindow: 16385,
     interfaces: [LLM_IF_OAI_Chat],
-    hidden: true,
+    //hidden: true,
     isLegacy: true,
   },
 
   // 3.5-Turbo's (original, 4ks)
-  {
-    idPrefix: 'gpt-3.5-turbo-0613',
-    label: '3.5-Turbo (0613)',
-    description: 'Snapshot of gpt-3.5-turbo from June 13th 2023. Will be deprecated on June 13, 2024.',
-    contextWindow: 4097,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
-    isLegacy: true,
-  },
-  {
-    idPrefix: 'gpt-3.5-turbo-0301',
-    label: '3.5-Turbo (0301)',
-    description: 'Snapshot of gpt-3.5-turbo from March 1st 2023. Will be deprecated on June 13th 2024.',
-    contextWindow: 4097,
-    interfaces: [LLM_IF_OAI_Chat],
-    hidden: true,
-    isLegacy: true,
-  },
+  // {
+  //   idPrefix: 'gpt-3.5-turbo-0613',
+  //   label: '3.5-Turbo (0613)',
+  //   description: '',
+  //   contextWindow: 4097,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  //   hidden: true,
+  //   isLegacy: true,
+  // },
+  // {
+  //   idPrefix: 'gpt-3.5-turbo-0301',
+  //   label: '3.5-Turbo (0301)',
+  //   description: '',
+  //   contextWindow: 4097,
+  //   interfaces: [LLM_IF_OAI_Chat],
+  //   hidden: true,
+  //   isLegacy: true,
+  // },
   {
     // NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
     idPrefix: 'gpt-3.5-turbo',
-    label: '3.5-Turbo',
-    description: 'Currently points to gpt-3.5-turbo-0125.',
-    symLink: 'gpt-3.5-turbo-0125',
+    label: 'version 1.4',
+    description: '',
+    //symLink: 'gpt-3.5-turbo-0125',
     // copied
     contextWindow: 16385,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
+    //hidden: true,
   },
 
 
   // Azure variants - because someone forgot the dot
-  {
-    idPrefix: 'gpt-35-turbo-16k',
-    label: '3.5-Turbo 16k',
-    description: 'Fair speed and smarts, large context',
-    contextWindow: 16384,
-    interfaces: [LLM_IF_OAI_Chat], // as azure doesn't version model id's (in the deployments), let's assume no function calling
-  },
-  {
-    idPrefix: 'gpt-35-turbo',
-    label: '3.5-Turbo',
-    contextWindow: 4097,
-    description: 'Fair speed and smarts',
-    interfaces: [LLM_IF_OAI_Chat], // as azure doesn't version model id's (in the deployments), let's assume no function calling
-  },
+  // {
+  //   idPrefix: 'gpt-35-turbo-16k',
+  //   label: '3.5-Turbo 16k',
+  //   description: '',
+  //   contextWindow: 16384,
+  //   interfaces: [LLM_IF_OAI_Chat], // as azure doesn't version model id's (in the deployments), let's assume no function calling
+  // },
+  // {
+  //   idPrefix: 'gpt-35-turbo',
+  //   label: '3.5-Turbo',
+  //   contextWindow: 4097,
+  //   description: '',
+  //   interfaces: [LLM_IF_OAI_Chat], // as azure doesn't version model id's (in the deployments), let's assume no function calling
+  // },
 
   // Fallback - unknown
-  {
-    idPrefix: '',
-    label: '?:',
-    description: 'Unknown, please let us know the ID. Assuming a 4097 context window size and Chat capabilities.',
-    contextWindow: 4097,
-    interfaces: [LLM_IF_OAI_Chat],
-    hidden: true,
-  },
+  // {
+  //   idPrefix: '',
+  //   label: '?:',
+  //   description: 'Unknown, please let us know the ID. Assuming a 4097 context window size and Chat capabilities.',
+  //   contextWindow: 4097,
+  //   interfaces: [LLM_IF_OAI_Chat],
+  //   hidden: true,
+  // },
 ] as const;
 
 export function azureModelToModelDescription(azureDeploymentRef: string, openAIModelIdBase: string, modelCreated: number, modelUpdated?: number): ModelDescriptionSchema {
@@ -516,94 +516,6 @@ export function togetherAIModelsToModelDescriptions(wireModels: unknown): ModelD
   return wireTogetherAIListOutputSchema.parse(wireModels)
     .map(togetherAIModelToModelDescription)
     .sort(togetherAIModelsSort);
-}
-
-
-// Perplexity
-
-const _knownPerplexityChatModels: ModelDescriptionSchema[] = [
-  {
-    id: 'codellama-34b-instruct',
-    label: 'Codellama 34B Instruct',
-    description: 'Code Llama is a collection of pretrained and fine-tuned generative text models. This model is designed for general code synthesis and understanding.',
-    contextWindow: 16384,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'codellama-70b-instruct',
-    label: 'Codellama 70B Instruct',
-    description: 'Code Llama is a collection of pretrained and fine-tuned generative text models. This model is designed for general code synthesis and understanding.',
-    contextWindow: 16384,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'llama-2-70b-chat',
-    label: 'Llama 2 70B Chat',
-    description: 'Llama 2 is a collection of pretrained and fine-tuned generative text models.',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'mistral-7b-instruct',
-    label: 'Mistral 7B Instruct',
-    description: 'The Mistral-7B-Instruct-v0.1 Large Language Model (LLM) is a instruct fine-tuned version of the Mistral-7B-v0.1 generative text model using a variety of publicly available conversation datasets.',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'mixtral-8x7b-instruct',
-    label: 'Mixtral 8x7B Instruct',
-    description: 'The Mixtral-8x7B Large Language Model (LLM) is a pretrained generative Sparse Mixture of Experts.',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'pplx-7b-online',
-    label: 'Perplexity 7B Online',
-    description: 'Perplexity 7B Online',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'pplx-70b-online',
-    label: 'Perplexity 70B Online',
-    description: 'Perplexity 70B Online',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'pplx-8x7b-online',
-    label: 'Perplexity 8x7B Online',
-    description: 'Perplexity 8x7B Online',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'pplx-7b-chat',
-    label: 'Perplexity 7B Chat',
-    description: 'Perplexity 7B Chat',
-    contextWindow: 8192,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'pplx-70b-chat',
-    label: 'Perplexity 70B Chat',
-    description: 'Perplexity 70B Chat',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-  {
-    id: 'pplx-8x7b-chat',
-    label: 'Perplexity 8x7B Chat',
-    description: 'Perplexity 8x7B Chat',
-    contextWindow: 4096,
-    interfaces: [LLM_IF_OAI_Chat],
-  },
-];
-
-export function perplexityAIModelDescriptions() {
-  // change this implementation once upstream implements some form of models listing
-  return _knownPerplexityChatModels;
 }
 
 
