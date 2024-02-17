@@ -296,7 +296,7 @@ export function PersonaSelector(props: { conversationId: DConversationId, runExa
 
 
         {/* [row -3] Description */}
-{/*         <Box sx={{ gridColumn: '1 / -1', mt: 3, display: 'flex', alignItems: 'center', gap: 1 }}>
+        <Box sx={{ gridColumn: '1 / -1', mt: 3, display: 'flex', alignItems: 'center', gap: 1 }}>
 
 
           {/* Description*/}
@@ -307,8 +307,8 @@ export function PersonaSelector(props: { conversationId: DConversationId, runExa
           </Typography>
           {/* Examples Toggle */}
           {fourExamples && showExamplescomponent}
-          {showPromptComponent}
-        </Box> */}
+{/*           {showPromptComponent} */}
+        </Box>
 
         {/* [row -3] Example incipits */}
         {systemPurposeId !== 'Custom' && (
