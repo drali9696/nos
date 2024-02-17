@@ -159,7 +159,7 @@ export function ImportChats(props: { onConversationActivate: (conversationId: DC
         {Brand.Title.Base} · JSON
       </Button>
 
-      {!chatGptEdit && (
+{/*       {!chatGptEdit && (
         <Button
           variant='soft' endDecorator={<OpenAIIcon />} sx={{ minWidth: 240, justifyContent: 'space-between' }}
           color={chatGptEdit ? 'neutral' : 'primary'}
@@ -168,7 +168,7 @@ export function ImportChats(props: { onConversationActivate: (conversationId: DC
           ChatGPT · Shared Link
         </Button>
       )}
-
+ */}
     </Box>
 
     {/* [chatgpt] data & controls */}
