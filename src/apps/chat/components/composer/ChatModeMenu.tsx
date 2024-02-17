@@ -18,10 +18,14 @@ interface ChatModeDescription {
 
 const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
   'generate-text': {
-     label: 'Chat',
-     description: 'Persona replies',
+    label: 'Chat',
+    description: 'Persona replies',
   },
- 
+  'append-user': {
+    label: 'Write',
+    description: 'Appends a message',
+    shortcut: 'Alt + Enter',
+  },
   'generate-image': {
     label: 'Draw',
     description: 'AI Image Generation',
