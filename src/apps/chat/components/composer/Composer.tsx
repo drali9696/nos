@@ -485,18 +485,18 @@ export function Composer(props: {
           : isDraw ? 'Draw'
             : 'Chat';
 
-  const buttonIcon =
-    micContinuation ? <AutoModeIcon />
-      : isAppend ? <SendIcon sx={{ fontSize: 18 }} />
-        : isReAct ? <PsychologyIcon />
-          : isBestOf ? <ChatBestOfIcon /> /* <GavelIcon /> */
-            : isDraw ? <FormatPaintIcon />
-              : <TelegramIcon />;
+  // const buttonIcon =
+  //   micContinuation ? <AutoModeIcon />
+  //     : isAppend ? <SendIcon sx={{ fontSize: 18 }} />
+  //       : isReAct ? <PsychologyIcon />
+  //         : isBestOf ? <ChatBestOfIcon /> /* <GavelIcon /> */
+  //           : isDraw ? <FormatPaintIcon />
+  //             : <TelegramIcon />;
 
   let textPlaceholder: string =
-    isDraw ? 'Describe an idea or a drawing...'
-      : isReAct ? 'Multi-step reasoning question...'
-        : isBestOf ? 'Multi-chat with this persona...'
+    // isDraw ? 'Describe an idea or a drawing...'
+    //   : isReAct ? 'Multi-step reasoning question...'
+    //     : isBestOf ? 'Multi-chat with this persona...'
           : props.isDeveloperMode ? 'Chat with me' + (isDesktop ? ' · drop source' : '') + ' · attach code...'
             : props.capabilityHasT2I ? 'Ask any medical question you have in any language you prefer, and I will respond based on references.'
               : 'Chat · /react · drop files...';
