@@ -279,7 +279,7 @@ export function PersonaSelector(props: { conversationId: DConversationId, runExa
         })}
 
         {/* Persona Creator Tile */}
-        {(editMode || !hidePersonaCreator) && (
+{/*         {(editMode || !hidePersonaCreator) && (
           <Tile
             text='Persona Creator'
             symbol='🎭'
@@ -292,7 +292,7 @@ export function PersonaSelector(props: { conversationId: DConversationId, runExa
               backgroundColor: 'neutral.softDisabledBg',
             }}
           />
-        )}
+        )} */}
 
 
         {/* [row -3] Description */}
