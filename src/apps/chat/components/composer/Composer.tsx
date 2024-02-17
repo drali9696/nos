@@ -464,10 +464,10 @@ export function Composer(props: {
 
 
   const isText = chatModeId === 'generate-text';
-  const isAppend = chatModeId === 'append-user';
-  const isBestOf = chatModeId === 'generate-best-of';
-  const isReAct = chatModeId === 'generate-react';
-  const isDraw = chatModeId === 'generate-image';
+  // const isAppend = chatModeId === 'append-user';
+  // const isBestOf = chatModeId === 'generate-best-of';
+  // const isReAct = chatModeId === 'generate-react';
+  // const isDraw = chatModeId === 'generate-image';
 
   const showCall = isText || isAppend;
 
@@ -479,10 +479,10 @@ export function Composer(props: {
             : 'primary';
 
   const buttonText =
-    isAppend ? 'Write'
-      : isReAct ? 'ReAct'
-        : isBestOf ? 'Best-Of'
-          : isDraw ? 'Draw'
+    // isAppend ? 'Write'
+    //   : isReAct ? 'ReAct'
+    //     : isBestOf ? 'Best-Of'
+    //       : isDraw ? 'Draw'
             : 'Chat';
 
   // const buttonIcon =
