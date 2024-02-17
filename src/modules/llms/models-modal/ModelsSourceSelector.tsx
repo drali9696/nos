@@ -164,7 +164,7 @@ export function ModelsSourceSelector(props: {
         {sourceItems.map(item => item.component)}
       </Select>
 
-      {isMobile ? (
+{/*       {isMobile ? (
         <IconButton variant={noSources ? 'solid' : 'plain'} color='primary' onClick={handleShowVendors} disabled={!!vendorsMenuAnchor}>
           <AddIcon />
         </IconButton>
@@ -173,7 +173,7 @@ export function ModelsSourceSelector(props: {
           Add
         </Button>
       )}
-
+ */}
       <IconButton
         variant='plain' color='neutral' disabled={!enableDeleteButton} sx={{ ml: 'auto' }}
         onClick={() => props.selectedSourceId && handleDeleteSource(props.selectedSourceId)}
