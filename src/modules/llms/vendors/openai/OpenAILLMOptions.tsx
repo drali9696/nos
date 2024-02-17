@@ -45,7 +45,7 @@ export function OpenAILLMOptions(props: { llm: DLLM<unknown, LLMOptionsOpenAI> }
     <FormSliderControl
       title='Temperature' ariaLabel='Model Temperature'
       description={llmTemperature < 0.33 ? 'More strict' : llmTemperature > 1 ? 'Extra hot ♨️' : llmTemperature > 0.67 ? 'Larger freedom' : 'Creativity'}
-      min={0} max={overheat ? 2 : 1} step={0.1} defaultValue={0.5}
+      min={0} max={overheat ? 2 : 1} step={0.1} defaultValue={0.0}
       valueLabelDisplay='on'
       value={llmTemperature}
       onChange={value => updateLLMOptions(llmId, { llmTemperature: value })}
