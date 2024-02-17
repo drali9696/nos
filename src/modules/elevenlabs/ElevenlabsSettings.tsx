@@ -30,7 +30,7 @@ export function ElevenlabsSettings() {
     {/*</FormHelperText>*/}
 
     {!isConfiguredServerSide && <FormInputKey
-      id='elevenlabs-key' label='ElevenLabs API Key'
+      id='elevenlabs-key' label='noskhe-voice Key'
       rightLabel={isConfiguredServerSide ? '✔️ already set in server' : 'required'}
       value={apiKey} onChange={setApiKey}
       required={!isConfiguredServerSide} isError={!isValidKey}
