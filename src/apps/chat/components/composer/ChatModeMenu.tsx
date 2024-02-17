@@ -17,7 +17,7 @@ interface ChatModeDescription {
 }
 
 const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
- generate-text': {
+  'generate-text': {
     label: 'Chat',
     description: 'Persona replies',
   },
@@ -26,11 +26,11 @@ const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
   //   description: 'Appends a message',
   //   shortcut: 'Alt + Enter',
   // },
-  'generate-image': {
-    label: 'Draw',
-    description: 'AI Image Generation',
-    requiresTTI: true,
-  },
+  // 'generate-image': {
+  //   label: 'Draw',
+  //   description: 'AI Image Generation',
+  //   requiresTTI: true,
+  // },
   // 'generate-best-of': {
   //   label: 'Best-Of', // Best of, Auto-Prime, Top Pick, Select Best
   //   description: 'Smarter: best of multiple replies',
