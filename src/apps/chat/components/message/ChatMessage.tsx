@@ -560,18 +560,18 @@ export function ChatMessage(props: {
               Diagram ...
             </MenuItem>
           )}
-          {!!props.onTextImagine && (
+{/*           {!!props.onTextImagine && (
             <MenuItem onClick={handleOpsImagine} disabled={!couldImagine || props.isImagining}>
               <ListItemDecorator>{props.isImagining ? <CircularProgress size='sm' /> : <FormatPaintIcon color='success' />}</ListItemDecorator>
               Draw ...
             </MenuItem>
-          )}
-          {!!props.onTextSpeak && (
+          )} */}
+{/*           {!!props.onTextSpeak && (
             <MenuItem onClick={handleOpsSpeak} disabled={!couldSpeak || props.isSpeaking}>
               <ListItemDecorator>{props.isSpeaking ? <CircularProgress size='sm' /> : <RecordVoiceOverIcon color='success' />}</ListItemDecorator>
               Speak
             </MenuItem>
-          )}
+          )} */}
           {/* Restart/try */}
           {!!props.onConversationRestartFrom && <ListDivider />}
           {!!props.onConversationRestartFrom && (
