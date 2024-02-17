@@ -79,7 +79,7 @@ export function PublishExport(props: {
 
   return <>
 
-    <Button
+{/*     <Button
       variant='soft' disabled={!hasConversation || publishUploading}
       loading={publishUploading}
       color={publishResponse ? 'success' : 'primary'}
@@ -88,7 +88,7 @@ export function PublishExport(props: {
       onClick={handlePublishConversation}
     >
       Share Copy · Paste.gg
-    </Button>
+    </Button> */}
 
     {/* [publish] confirmation */}
     {publishConversationId && (
