@@ -113,13 +113,13 @@ export function ExportChats(props: { config: ExportConfig, onClose: () => void }
             onClose={props.onClose}
           />
 
-          {/*<Button*/}
+{/*           <Button*/}
           {/*  variant='soft'*/}
           {/*  endDecorator={<ExitToAppIcon />}*/}
           {/*  sx={{ minWidth: 240, justifyContent: 'space-between' }}*/}
           {/*>*/}
           {/*  Share Copy · ShareGPT*/}
-          {/*</Button>*/}
+          {/*</Button> */}
 
         </Box>
       </Grid>
