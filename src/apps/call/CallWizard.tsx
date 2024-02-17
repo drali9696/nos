@@ -169,8 +169,8 @@ export function CallWizard(props: { strict?: boolean, conversationId: string | n
     <StatusCard
       icon={<RecordVoiceOverIcon />}
       text={
-        (synthesis.mayWork ? 'Voice synthesis should be ready.' : 'There might be an issue with ElevenLabs voice synthesis.')
-        + (synthesis.isConfiguredServerSide ? '' : (synthesis.isConfiguredClientSide ? '' : ' Please add your API key in the settings.'))
+        (synthesis.mayWork ? 'Voice synthesis should be ready.' : 'There might be an issue with noskhe-voice synthesis.')
+        + (synthesis.isConfiguredServerSide ? '' : (synthesis.isConfiguredClientSide ? '' : ' Please add your noskhe-voice key in the settings.'))
       }
       button={synthesis.mayWork ? undefined : (
         <Button variant='outlined' onClick={handleConfigureElevenLabs} sx={{ mx: 1 }}>
