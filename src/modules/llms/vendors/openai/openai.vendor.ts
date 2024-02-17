@@ -43,7 +43,7 @@ export const ModelVendorOpenAI: IModelVendor<SourceSetupOpenAI, OpenAIAccessSche
   hasBackendCap: () => backendCaps().hasLlmOpenAI,
 
   // components
-  Icon: OpenAIIcon,
+  // Icon: OpenAIIcon,
   SourceSetupComponent: OpenAISourceSetup,
   LLMOptionsComponent: OpenAILLMOptions,
 
