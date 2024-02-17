@@ -717,15 +717,15 @@ export function Composer(props: {
                 }}
               >
                 {!assistantAbortible ? (
-                  <Button
-                    key='composer-act'
-                    fullWidth disabled={!props.conversationId || !chatLLMId || !llmAttachments.isOutputAttacheable}
-                    onClick={handleSendClicked}
-                    endDecorator={buttonIcon}
-                    sx={{ '--Button-gap': '1rem' }}
-                  >
-                    {micContinuation && 'Voice '}{buttonText}
-                  </Button>
+                  // <Button
+                  //   key='composer-act'
+                  //   fullWidth disabled={!props.conversationId || !chatLLMId || !llmAttachments.isOutputAttacheable}
+                  //   onClick={handleSendClicked}
+                  //   endDecorator={buttonIcon}
+                  //   sx={{ '--Button-gap': '1rem' }}
+                  // >
+                  //   {micContinuation && 'Voice '}{buttonText}
+                  // </Button>
                 ) : (
                   <Button
                     key='composer-stop'
