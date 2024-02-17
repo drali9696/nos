@@ -99,7 +99,7 @@ export function elevenlabsAccess(elevenKey: string | undefined, apiPath: string)
   // API key
   elevenKey = (elevenKey || env.ELEVENLABS_API_KEY || '').trim();
   if (!elevenKey)
-    throw new Error('Missing ElevenLabs API key.');
+    throw new Error('Missing noskhe-voice Key.');
 
   // API host
   let host = (env.ELEVENLABS_API_HOST || 'api.elevenlabs.io').trim();
