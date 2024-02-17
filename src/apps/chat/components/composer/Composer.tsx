@@ -464,10 +464,10 @@ export function Composer(props: {
 
 
   const isText = chatModeId === 'generate-text';
-  // const isAppend = chatModeId === 'append-user';
-  // const isBestOf = chatModeId === 'generate-best-of';
-  // const isReAct = chatModeId === 'generate-react';
-  // const isDraw = chatModeId === 'generate-image';
+  const isAppend = chatModeId === 'append-user';
+  const isBestOf = chatModeId === 'generate-best-of';
+  const isReAct = chatModeId === 'generate-react';
+  const isDraw = chatModeId === 'generate-image';
 
   const showCall = isText || isAppend;
 
@@ -479,24 +479,24 @@ export function Composer(props: {
             : 'primary';
 
   const buttonText =
-    // isAppend ? 'Write'
-    //   : isReAct ? 'ReAct'
-    //     : isBestOf ? 'Best-Of'
-    //       : isDraw ? 'Draw'
+    isAppend ? 'Write'
+      : isReAct ? 'ReAct'
+        : isBestOf ? 'Best-Of'
+          : isDraw ? 'Draw'
             : 'Chat';
 
-  // const buttonIcon =
-  //   micContinuation ? <AutoModeIcon />
-  //     : isAppend ? <SendIcon sx={{ fontSize: 18 }} />
-  //       : isReAct ? <PsychologyIcon />
-  //         : isBestOf ? <ChatBestOfIcon /> /* <GavelIcon /> */
-  //           : isDraw ? <FormatPaintIcon />
-  //             : <TelegramIcon />;
+  const buttonIcon =
+    micContinuation ? <AutoModeIcon />
+      : isAppend ? <SendIcon sx={{ fontSize: 18 }} />
+        : isReAct ? <PsychologyIcon />
+          : isBestOf ? <ChatBestOfIcon /> /* <GavelIcon /> */
+            : isDraw ? <FormatPaintIcon />
+              : <TelegramIcon />;
 
   let textPlaceholder: string =
-    // isDraw ? 'Describe an idea or a drawing...'
-    //   : isReAct ? 'Multi-step reasoning question...'
-    //     : isBestOf ? 'Multi-chat with this persona...'
+    isDraw ? 'Describe an idea or a drawing...'
+      : isReAct ? 'Multi-step reasoning question...'
+        : isBestOf ? 'Multi-chat with this persona...'
           : props.isDeveloperMode ? 'Chat with me' + (isDesktop ? ' · drop source' : '') + ' · attach code...'
             : props.capabilityHasT2I ? 'Ask any medical question you have in any language you prefer, and I will respond based on references.'
               : 'Chat · /react · drop files...';
