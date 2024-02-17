@@ -52,10 +52,10 @@ export const CHAT_NOVEL_TITLE = 'Chat';
  */
 export type ChatModeId =
   | 'generate-text'
-  | 'append-user'
-  | 'generate-image'
-  | 'generate-best-of'
-  | 'generate-react';
+  // | 'append-user'
+  // | 'generate-image'
+  // | 'generate-best-of'
+  // | 'generate-react';
 
 
 export function AppChat() {
