@@ -24,7 +24,7 @@ interface OptimaDrawersActions {
 const UseOptimaDrawers = React.createContext<(OptimaDrawersState & OptimaDrawersActions) | undefined>(undefined);
 
 // TRICK: this is how we persist the drawer state across page navigations
-let lastDrawerOpen = !getIsMobile() && !(isBrowser && window.location.pathname === '/news');
+let lastDrawerOpen = !getIsMobile() && !(isBrowser && window.location.pathname === '/');
 
 export function OptimaDrawerProvider(props: { children: React.ReactNode }) {
 
