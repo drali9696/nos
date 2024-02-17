@@ -346,7 +346,7 @@ export function PersonaSelector(props: { conversationId: DConversationId, runExa
                 ))}
               </List>
             )}
-            {showPrompt && (
+{/*             {showPrompt && (
               <Card>
                 <CardContent>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
@@ -374,7 +374,7 @@ export function PersonaSelector(props: { conversationId: DConversationId, runExa
                   )}
                 </CardContent>
               </Card>
-            )}
+            )} */}
           </ExpanderControlledBox>
         )}
 
