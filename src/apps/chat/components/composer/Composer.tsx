@@ -497,7 +497,7 @@ export function Composer(props: {
     isDraw ? 'Describe an idea or a drawing...'
       : isReAct ? 'Multi-step reasoning question...'
         : isBestOf ? 'Multi-chat with this persona...'
-          : props.isDeveloperMode ? 'Chat with me' + (isDesktop ? ' · drop source' : '') + ' · attach code...'
+          : props.isDeveloperMode ? '\nShift+Enter to add a new line\nThis program was created by Dr. Ali Erfanizadeh and the website noskhe.chat' : '\nShift+Enter to send'
             : props.capabilityHasT2I ? 'Ask any medical question you have in any language you prefer, and I will respond based on references.'
               : 'Chat · /react · drop files...';
   if (isDesktop && explainShiftEnter)
