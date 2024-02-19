@@ -177,7 +177,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   isLegacy: true,
   // },
   {
-    NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
+    //NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
     idPrefix: 'gpt-3.5-turbo',
     label: 'version 1.4',
     description: '',
