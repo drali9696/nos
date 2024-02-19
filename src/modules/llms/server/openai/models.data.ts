@@ -369,10 +369,10 @@ export function oobaboogaModelToModelDescription(modelId: string, created: numbe
 
 // [OpenRouter]
 
-// const orOldModelIDs = [
-//   'openai/gpt-3.5-turbo-0301', 'openai/gpt-4-0314', 'openai/gpt-4-32k-0314', 'openai/text-davinci-002',
-//   'anthropic/claude-v1', 'anthropic/claude-1.2', 'anthropic/claude-instant-v1-100k', 'anthropic/claude-v1-100k', 'anthropic/claude-instant-1.0',
-// ];
+const orOldModelIDs = [
+  'openai/gpt-3.5-turbo-0301', 'openai/gpt-4-0314', 'openai/gpt-4-32k-0314', 'openai/text-davinci-002',
+  'anthropic/claude-v1', 'anthropic/claude-1.2', 'anthropic/claude-instant-v1-100k', 'anthropic/claude-v1-100k', 'anthropic/claude-instant-1.0',
+];
 
 const orModelFamilyOrder = [
   // great models (pickes by hand, they're free)
