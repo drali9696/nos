@@ -353,8 +353,8 @@ export function oobaboogaModelToModelDescription(modelId: string, created: numbe
     label = label.slice(0, -4);
 
   // special case for the default (and only 'chat') model
-  if (modelId === 'gpt-3.5-turbo')
-    label = 'Oobabooga Model';
+  // if (modelId === 'gpt-3.5-turbo')
+  //   label = 'Oobabooga Model';
 
   return fromManualMapping(_knownOobaboogaChatModels, modelId, created, undefined, {
     idPrefix: modelId,
