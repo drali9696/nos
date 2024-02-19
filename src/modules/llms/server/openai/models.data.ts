@@ -152,7 +152,7 @@ const _knownOpenAIChatModels: ManualMappings = [
    /// symLink: 'gpt-3.5-turbo-16k-0613',
     // copied
     contextWindow: 16385,
-    // interfaces: [LLM_IF_OAI_Chat],
+    interfaces: [LLM_IF_OAI_Chat],
     //hidden: true,
     isLegacy: true,
   },
