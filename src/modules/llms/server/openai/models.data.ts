@@ -154,7 +154,7 @@ const _knownOpenAIChatModels: ManualMappings = [
     contextWindow: 16385,
     // interfaces: [LLM_IF_OAI_Chat],
     //hidden: true,
-    // isLegacy: true,
+    isLegacy: true,
   },
 
   // 3.5-Turbo's (original, 4ks)
