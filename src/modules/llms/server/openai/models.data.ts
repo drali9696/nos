@@ -158,15 +158,15 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
 
   // 3.5-Turbo's (original, 4ks)
-  // {
-  //   idPrefix: 'gpt-3.5-turbo-0613',
-  //   label: '3.5-Turbo (0613)',
-  //   description: '',
-  //   contextWindow: 4097,
-  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-  //   hidden: true,
-  //   isLegacy: true,
-  // },
+  {
+    idPrefix: 'gpt-3.5-turbo-0613',
+    label: '1.4',
+    description: '',
+    contextWindow: 4097,
+    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+   // hidden: true,
+    isLegacy: true,
+  },
   // {
   //   idPrefix: 'gpt-3.5-turbo-0301',
   //   label: '3.5-Turbo (0301)',
@@ -176,18 +176,18 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   hidden: true,
   //   isLegacy: true,
   // },
-  {
+  // {
     // NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
-    idPrefix: 'gpt-3.5-turbo-preview',
-    label: 'version 1.4',
-    description: '',
-    //symLink: 'gpt-3.5-turbo-0125',
-    // copied
-    contextWindow: 16385,
-    maxCompletionTokens: 4096,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
-  },
+  //   idPrefix: 'gpt-3.5-turbo',
+  //   label: 'version 1.7',
+  //   description: '',
+  //   //symLink: 'gpt-3.5-turbo-0125',
+  //   // copied
+  //   contextWindow: 16385,
+  //   maxCompletionTokens: 4096,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  //   hidden: true,
+  // },
 
 
   // Azure variants - because someone forgot the dot
