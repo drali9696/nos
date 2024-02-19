@@ -143,7 +143,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   contextWindow: 16385,
   //   interfaces: [LLM_IF_OAI_Chat],
   //   hidden: true,
-    isLegacy: true,
+    // isLegacy: true,
   // },
   {
     idPrefix: 'gpt-3.5-turbo-16k',
