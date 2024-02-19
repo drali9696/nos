@@ -180,7 +180,7 @@ const _knownOpenAIChatModels: ManualMappings = [
 {
     //NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
     idPrefix: 'gpt-3.5-turbo',
-    label: 'version 1.5',
+    label: 'version 1.9',
     description: '',
     //symLink: 'gpt-3.5-turbo-0125',
     // copied
