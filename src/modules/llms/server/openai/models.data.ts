@@ -138,7 +138,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   // {
   //   idPrefix: 'gpt-3.5-turbo-16k-0613',
-  //   label: 'version 1.5',
+  //   label: '3.5-Turbo 16k (0613)',
   //   description: '',
   //   contextWindow: 16385,
   //   interfaces: [LLM_IF_OAI_Chat],
@@ -176,19 +176,19 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   hidden: true,
   //   isLegacy: true,
   // },
-  
-{
-    //NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
+  {
+    // NOTE: will link to 0125 on Feb 16th 2024 - we are pre-ready for it on the dev branch
     idPrefix: 'gpt-3.5-turbo',
     label: 'version 1.4',
     description: '',
-    //symLink: 'gpt-3.5-turbo-0125',
+    symLink: 'gpt-3.5-turbo-0125',
     // copied
     contextWindow: 16385,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
     hidden: true,
   },
+
 
   // Azure variants - because someone forgot the dot
   // {
@@ -352,7 +352,7 @@ export function oobaboogaModelToModelDescription(modelId: string, created: numbe
   if (label.endsWith('.bin'))
     label = label.slice(0, -4);
 
-  special case for the default (and only 'chat') model
+  // special case for the default (and only 'chat') model
   if (modelId === 'gpt-3.5-turbo')
     label = 'Oobabooga Model';
 
