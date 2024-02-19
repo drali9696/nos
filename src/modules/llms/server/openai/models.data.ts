@@ -185,7 +185,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   // copied
     contextWindow: 16385,
     maxCompletionTokens: 4096,
-  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+     interfaces: [LLM_IF_OAI_Chat],
   //   hidden: true,
   },
 
