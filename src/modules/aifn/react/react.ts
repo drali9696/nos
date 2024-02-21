@@ -8,8 +8,6 @@ import { callApiSearchGoogle } from '~/modules/google/search.client';
 import { callBrowseFetchPage } from '~/modules/browse/browse.client';
 import { llmChatGenerateOrThrow, VChatMessageIn } from '~/modules/llms/llm.client';
 
-import { frontendSideFetch } from '~/common/util/clientFetchers';
-
 
 // prompt to implement the ReAct paradigm: https://arxiv.org/abs/2210.03629
 const reActPrompt = (enableBrowse: boolean): string =>
@@ -174,7 +172,7 @@ export class Agent {
 type ActionFunction = (input: string) => Promise<string>;
 
 async function wikipedia(q: string): Promise<string> {
-  const response = await frontendSideFetch(
+  const response = await fetch(
     `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(q)}&format=json&origin=*`,
   );
   const data = await response.json();
