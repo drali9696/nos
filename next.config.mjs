@@ -1,24 +1,13 @@
-const BuildOptions = {
-  // Future: Electron/Frontend-only builds
-  exportFrontend: false,
-};
-
 /** @type {import('next').NextConfig} */
 let nextConfig = {
   reactStrictMode: true,
 
-  // [exporting] https://nextjs.org/docs/advanced-features/static-html-export
-  ...BuildOptions.exportFrontend && {
-    // Export the frontend to ./dist
-    output: 'export',
-    distDir: 'dist',
-
-    // Disable Image optimization
-    images: { unoptimized: true },
-
-    // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-    // trailingSlash: true,
-  },
+  // Note: disabled to chech whether the project becomes slower with this
+  // modularizeImports: {
+  //   '@mui/icons-material': {
+  //     transform: '@mui/icons-material/{{member}}',
+  //   },
+  // },
 
   // [puppeteer] https://github.com/puppeteer/puppeteer/issues/11052
   experimental: {
@@ -35,19 +24,8 @@ let nextConfig = {
       layers: true,
     };
 
-    // [exporting] prevent too many small files (50kb)
-    if (BuildOptions.exportFrontend)
-      config.optimization.splitChunks.minSize = 50 * 1024;
-
     return config;
   },
-
-  // Note: disabled to check whether the project becomes slower with this
-  // modularizeImports: {
-  //   '@mui/icons-material': {
-  //     transform: '@mui/icons-material/{{member}}',
-  //   },
-  // },
 
   // Uncomment the following leave console messages in production
   // compiler: {
