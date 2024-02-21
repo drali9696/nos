@@ -18,7 +18,6 @@ const PLAIN_TEXT_MIMETYPES: string[] = [
   'text/markdown',
   'text/csv',
   'text/css',
-  'text/javascript',
   'application/json',
 ];
 
