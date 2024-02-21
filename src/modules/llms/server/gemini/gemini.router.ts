@@ -5,7 +5,7 @@ import { env } from '~/server/env.mjs';
 import packageJson from '../../../../../package.json';
 
 import { createTRPCRouter, publicProcedure } from '~/server/api/trpc.server';
-import { fetchJsonOrTRPCError } from '~/server/api/trpc.router.fetchers';
+import { fetchJsonOrTRPCError } from '~/server/api/trpc.serverutils';
 
 import { fixupHost } from '~/common/util/urlUtils';
 
