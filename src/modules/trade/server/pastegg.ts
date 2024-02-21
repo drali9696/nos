@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { fetchJsonOrTRPCError } from '~/server/api/trpc.router.fetchers';
+import { fetchJsonOrTRPCError } from '~/server/api/trpc.serverutils';
 
 
 export const publishToInputSchema = z.object({
