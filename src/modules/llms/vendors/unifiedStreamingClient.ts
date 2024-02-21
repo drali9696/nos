@@ -1,5 +1,5 @@
 import { apiAsync } from '~/common/util/trpc.client';
-import { frontendSideFetch } from '~/common/util/clientFetchers';
+
 import type { ChatStreamingFirstOutputPacketSchema, ChatStreamingInputSchema } from '../server/llm.server.streaming';
 import type { DLLMId } from '../store-llms';
 import type { VChatFunctionIn, VChatMessageIn } from '../llm.client';
@@ -57,7 +57,7 @@ export async function unifiedStreamingClient<TSourceSetup = unknown, TLLMOptions
   };
 
   // connect to the server-side streaming endpoint
-  const response = await frontendSideFetch('/api/llms/stream', {
+  const response = await fetch('/api/llms/stream', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(input),
