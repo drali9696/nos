@@ -38,17 +38,17 @@ const _knownOpenAIChatModels: ManualMappings = [
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
   },
-  {
-    idPrefix: 'gpt-4-turbo-preview',
-    label: 'version 2.3',
-    description: '',
-    symLink: 'gpt-4-0125-preview',
-    hidden: true,
-    // copied
-    contextWindow: 128000,
-    maxCompletionTokens: 4096,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-  },
+  // {
+  //   idPrefix: 'gpt-4-turbo-preview',
+  //   label: 'version 2.3',
+  //   description: '',
+  //   symLink: 'gpt-4-0125-preview',
+  //   hidden: true,
+  //   // copied
+  //   contextWindow: 128000,
+  //   maxCompletionTokens: 4096,
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  // },
 
   // GPT4-32k's
   // {
@@ -126,7 +126,7 @@ const _knownOpenAIChatModels: ManualMappings = [
     contextWindow: 16385,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    isLatest: true,
+    // isLatest: true,
   },
   // {
   //   idPrefix: 'gpt-3.5-turbo-1106',
