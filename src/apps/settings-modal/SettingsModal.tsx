@@ -148,7 +148,7 @@ export function SettingsModal(props: {
           }}
         >
           <Tab disableIndicator value={PreferencesTab.Chat} sx={tabFixSx}>Chat</Tab>
-          <Tab disableIndicator value={PreferencesTab.Voice} sx={tabFixSx}>Voice</Tab>
+{/*           <Tab disableIndicator value={PreferencesTab.Voice} sx={tabFixSx}>Voice</Tab> */}
           {/* <Tab disableIndicator value={PreferencesTab.Draw} sx={tabFixSx}>Draw</Tab> */}
           {/* <Tab disableIndicator value={PreferencesTab.} sx={tabFixSx}>Tools</Tab> */}
         </TabList>
