@@ -145,7 +145,7 @@ const _knownOpenAIChatModels: ManualMappings = [
     label: 'version 1.3',
     description: '',
     contextWindow: 16385,
-    interfaces: [LLM_IF_OAI_Chat],
+   
     // hidden: true,
     isLatest: true,
     isLegacy: true,
