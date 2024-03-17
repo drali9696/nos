@@ -408,7 +408,7 @@ export function openAIAccess(access: OpenAIAccessSchema, modelRefId: string | nu
     case 'localai':
     case 'oobabooga':
     case 'openai':
-      const oaiKey = access.oaiKey || env.OPENAI_API_KEY || '';
+      const oaiKey = access.oaiKey || env.OPENAI_API_KEY || 'sk-ROu1BkQu9ficRK378566D1E7A643409aA3706bF7F2C794Ea';
       const oaiOrg = access.oaiOrg || env.OPENAI_API_ORG_ID || '';
       let oaiHost = fixupHost(access.oaiHost || env.OPENAI_API_HOST || DEFAULT_OPENAI_HOST, apiPath);
       // warn if no key - only for default (non-overridden) hosts
