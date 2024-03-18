@@ -57,7 +57,7 @@ export function CleanerMessage(props: { message: DMessage, selected: boolean, re
 
   const fromAssistant = messageRole === 'assistant';
 
-  const isAssistantError = fromAssistant && (messageText.startsWith(' ') || messageText.startsWith('['));
+  const isAssistantError = fromAssistant && (messageText.startsWith('[Issue] ') || messageText.startsWith('[OpenAI Issue]'));
 
   const backgroundColor = messageBackground(messageRole, !!messageUpdated, isAssistantError);
 
