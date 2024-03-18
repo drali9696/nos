@@ -700,13 +700,13 @@ export function Composer(props: {
             <Box sx={{ display: 'flex' }}>
 
               {/* [mobile] bottom-corner secondary button */}
-              {isMobile && (showCall
+{/*               {isMobile && (showCall
                   ? <ButtonCallMemo isMobile disabled={!props.conversationId || !chatLLMId} onClick={handleCallClicked} />
                   : isDraw
                     ? <ButtonOptionsDraw isMobile onClick={handleDrawOptionsClicked} sx={{ mr: { xs: 1, md: 2 } }} />
                     : <IconButton disabled sx={{ mr: { xs: 1, md: 2 } }} />
               )}
-
+ */}
               {/* Responsive Send/Stop buttons */}
               <ButtonGroup
                 variant={isAppend ? 'outlined' : 'solid'}
