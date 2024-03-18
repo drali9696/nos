@@ -16,11 +16,11 @@ interface ChatModeDescription {
   requiresTTI?: boolean;
 }
 
-const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
-  'generate-text': {
-    label: 'Chat',
-    description: 'Persona replies',
-  },
+// const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
+//   'generate-text': {
+//     label: 'Chat',
+//     description: 'Persona replies',
+//   },
   // 'append-user': {
   //   label: 'Write',
   //   description: 'Appends a message',
@@ -39,7 +39,7 @@ const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
   //   label: 'Reason + Act', //  · α
   //   description: 'Answers questions in multiple steps',
   // },
-};
+// };
 
 
 function fixNewLineShortcut(shortcut: string, enterIsNewLine: boolean) {
