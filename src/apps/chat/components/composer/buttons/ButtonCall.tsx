@@ -28,9 +28,9 @@ export function ButtonCall(props: { isMobile?: boolean, disabled?: boolean, onCl
     </IconButton>
   ) : (
     <Tooltip disableInteractive variant='solid' arrow placement='right' title={callConversationLegend}>
-      <Button variant='soft' color='primary' disabled={props.disabled} onClick={props.onClick} endDecorator={<CallIcon />} sx={desktopSx}>
+{/*       <Button variant='soft' color='primary' disabled={props.disabled} onClick={props.onClick} endDecorator={<CallIcon />} sx={desktopSx}>
         Call
-      </Button>
+      </Button> */}
     </Tooltip>
   );
 }
