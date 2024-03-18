@@ -478,12 +478,13 @@ export function Composer(props: {
           : isDraw ? 'warning'
             : 'primary';
 
-  const buttonText =
-    isAppend ? 'Write'
-      : isReAct ? 'ReAct'
-        : isBestOf ? 'Best-Of'
-          : isDraw ? 'Draw'
-            : 'Chat';
+  const buttonText = 'Chat';
+    // isAppend ? 'Write'
+    //   : isReAct ? 'ReAct'
+    //     : isBestOf ? 'Best-Of'
+    //       : isDraw ? 'Draw'
+    //         : 'Chat';
+      
 
   const buttonIcon =
     micContinuation ? <AutoModeIcon />
