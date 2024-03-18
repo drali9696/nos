@@ -212,7 +212,7 @@ export const navItems: {
     // },
     {
       type: 'extLink',
-      name: 'Discord',
+      name: 'noskhe.chat',
       icon: DiscordIcon,
       href: Brand.URIs.SupportInvite,
     },
