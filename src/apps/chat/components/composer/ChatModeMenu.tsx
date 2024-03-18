@@ -24,7 +24,7 @@ const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
   'append-user': {
     label: '',
     description: '',
-    shortcut: 'Alt + Enter',
+    shortcut: '',
   },
   'generate-image': {
     label: '',
@@ -37,7 +37,7 @@ const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
   },
   'generate-react': {
     label: '', //  · α
-    description: ',
+    description: '',
   },
 };
 
