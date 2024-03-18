@@ -16,30 +16,30 @@ interface ChatModeDescription {
   requiresTTI?: boolean;
 }
 
-// const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
-//   'generate-text': {
-//     label: 'Chat',
-//     description: 'Persona replies',
-//   },
-  // 'append-user': {
-  //   label: 'Write',
-  //   description: 'Appends a message',
-  //   shortcut: 'Alt + Enter',
-  // },
-  // 'generate-image': {
-  //   label: 'Draw',
-  //   description: 'AI Image Generation',
-  //   requiresTTI: true,
-  // },
-  // 'generate-best-of': {
-  //   label: 'Best-Of', // Best of, Auto-Prime, Top Pick, Select Best
-  //   description: 'Smarter: best of multiple replies',
-  // },
-  // 'generate-react': {
-  //   label: 'Reason + Act', //  · α
-  //   description: 'Answers questions in multiple steps',
-  // },
-// };
+const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
+  'generate-text': {
+    label: 'Chat',
+    description: 'Persona replies',
+  },
+  'append-user': {
+    label: '',
+    description: '',
+    shortcut: 'Alt + Enter',
+  },
+  'generate-image': {
+    label: '',
+    description: '',
+    requiresTTI: true,
+  },
+  'generate-best-of': {
+    label: '', // Best of, Auto-Prime, Top Pick, Select Best
+    description: '',
+  },
+  'generate-react': {
+    label: '', //  · α
+    description: ',
+  },
+};
 
 
 function fixNewLineShortcut(shortcut: string, enterIsNewLine: boolean) {
