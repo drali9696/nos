@@ -24,7 +24,6 @@ COPY . .
 
 # Build the application
 ENV NODE_ENV production
-RUN npm i sharp
 RUN npm run build
 
 # Reduce installed packages to production-only
