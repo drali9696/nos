@@ -20,8 +20,8 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   contextWindow: 128000,
   //   maxCompletionTokens: 4096,
   // trainingDataCutoff: 'Dec 2023',
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
-  },
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
+  // },
   {
   //   isLatest: true,
     //  idPrefix: 'gpt-4-turbo-2024-04-09',
