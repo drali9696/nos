@@ -255,7 +255,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   interfaces: [LLM_IF_OAI_Chat],
   //   hidden: true,
   // },
-] ;
+] as const;
 
 const openAIModelsDenyList: string[] = [
   /* /v1/audio/speech */
