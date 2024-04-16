@@ -22,7 +22,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   // trainingDataCutoff: 'Dec 2023',
   //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
   // },
-  {
+  // {
   //   isLatest: true,
     //  idPrefix: 'gpt-4-turbo-2024-04-09',
     // label: 'GPT-4 Turbo (2024-04-09)',
@@ -184,7 +184,7 @@ const _knownOpenAIChatModels: ManualMappings = [
     trainingDataCutoff: 'Sep 2021',
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
   },
-  {
+  // {
    
   //   idPrefix: 'gpt-3.5-turbo-16k',
   //   label: '3.5-Turbo 16k',
