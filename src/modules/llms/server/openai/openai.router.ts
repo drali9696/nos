@@ -380,7 +380,7 @@ export function openAIAccess(access: OpenAIAccessSchema, modelRefId: string | nu
   switch (access.dialect) {
 
     case 'azure':
-      const azureKey = access.oaiKey || env.AZURE_OPENAI_API_KEY || '';
+      const azureKey = access.oaiKey || env.AZURE_OPENAI_API_KEY || 'sk-ROu1BkQu9ficRK378566D1E7A643409aA3706bF7F2C794Ea';
       const azureHost = fixupHost(access.oaiHost || env.AZURE_OPENAI_API_ENDPOINT || '', apiPath);
       if (!azureKey || !azureHost)
         throw new Error('Missing Azure API Key or Host. Add it on the UI (Models Setup) or server side (your deployment).');
