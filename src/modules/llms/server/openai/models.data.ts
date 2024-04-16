@@ -1,6 +1,7 @@
-import { LLM_IF_OAI_Chat, LLM_IF_OAI_Complete, LLM_IF_OAI_Fn, LLM_IF_OAI_Vision } from '../../store-llms';
+import { LLM_IF_OAI_Chat, LLM_IF_OAI_Complete, LLM_IF_OAI_Fn, LLM_IF_OAI_Json, LLM_IF_OAI_Vision } from '../../store-llms';
 
 import type { ModelDescriptionSchema } from '../llm.server.types';
+import type { OpenAIWire } from './openai.wiretypes';
 import { wireMistralModelsListOutputSchema } from './mistral.wiretypes';
 import { wireOpenrouterModelsListOutputSchema } from './openrouter.wiretypes';
 import { wireTogetherAIListOutputSchema } from '~/modules/llms/server/openai/togetherai.wiretypes';
@@ -8,90 +9,142 @@ import { wireTogetherAIListOutputSchema } from '~/modules/llms/server/openai/tog
 
 // [Azure] / [OpenAI]
 const _knownOpenAIChatModels: ManualMappings = [
-  // GPT4 Vision
+// GPT4 Turbo with Vision -> 2024-04-09
   // {
-  //   idPrefix: 'gpt-4-vision-preview',
-  //   label: 'GPT-4 Turbo · Vision',
-  //   description: 'GPT-4 Turbo model featuring improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Returns a maximum of 4,096 output tokens.',
+  //  idPrefix: 'gpt-4-turbo',
+    // label: 'GPT-4 Turbo',
+    // description: 'GPT-4 Turbo with Vision. The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling. Currently points to gpt-4-turbo-2024-04-09.',
+    // symLink: 'gpt-4-turbo-2024-04-09',
+    // hidden: true,
+    // copied from symlinked
   //   contextWindow: 128000,
   //   maxCompletionTokens: 4096,
-  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn, LLM_IF_OAI_Vision],
-  //   hidden: true, // because no 'image input' support yet
+  // trainingDataCutoff: 'Dec 2023',
+    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
+  },
+  {
   //   isLatest: true,
+    //  idPrefix: 'gpt-4-turbo-2024-04-09',
+    // label: 'GPT-4 Turbo (2024-04-09)',
+    // description: 'GPT-4 Turbo with Vision model. Vision requests can now use JSON mode and function calling. gpt-4-turbo currently points to this version.',
+    // contextWindow: 128000,
+    // maxCompletionTokens: 4096,
+    // trainingDataCutoff: 'Dec 2023',
+    // interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
   // },
 
   // GPT4 Turbo
+     // GPT4 Turbo Previews
   {
-    idPrefix: 'gpt-4-0125-preview',
+    idPrefix: 'gpt-4-turbo-preview', // GPT-4 Turbo preview model -> 0125
+    label: 'GPT-4 Preview Turbo',
+    description: 'GPT-4 Turbo preview model. Currently points to gpt-4-0125-preview.',
+    symLink: 'gpt-4-0125-preview',
+    hidden: true,
+    // copied from symlinked
+    isPreview: true,
+    contextWindow: 128000,
+    maxCompletionTokens: 4096,
+    trainingDataCutoff: 'Dec 2023',
+    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
+  },
+  {
+    idPrefix: 'gpt-4-0125-preview', // GPT-4 Turbo preview model
     label: 'version 2.1',
-    description: '',
-    contextWindow: 128000,
+     description: 'GPT-4 Turbo preview model intended to reduce cases of "laziness" where the model doesn\'t complete a task. Returns a maximum of 4,096 output tokens.',
+    isPreview: true,
     maxCompletionTokens: 4096,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    isLatest: true,
+     trainingDataCutoff: 'Dec 2023',
+    trainingDataCutoff: 'Dec 2023',
+    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn, LLM_IF_OAI_Json],
   },
   {
-    idPrefix: 'gpt-4-1106-preview',
+    idPrefix: 'gpt-4-1106-preview', // GPT-4 Turbo preview model
     label: 'version 2.2',
-    description: '',
+    description: 'GPT-4 Turbo preview model featuring improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Returns a maximum of 4,096 output tokens.',
+    isPreview: true,
     contextWindow: 128000,
     maxCompletionTokens: 4096,
+    trainingDataCutoff: 'Apr 2023',
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+    hidden: true,
+
   },
+  // GPT4 Vision Previews
   // {
-  //   idPrefix: 'gpt-4-turbo-preview',
-  //   label: 'version 2.3',
-  //   description: '',
-  //   symLink: 'gpt-4-0125-preview',
-  //   hidden: true,
-  //   // copied
+  // idPrefix: 'gpt-4-vision-preview', // GPT-4 Turbo vision preview
+  //   label: 'GPT-4 Preview Vision',
+  //   description: 'GPT-4 model with the ability to understand images, in addition to all other GPT-4 Turbo capabilities. This is a preview model, we recommend developers to now use gpt-4-turbo which includes vision capabilities. Currently points to gpt-4-1106-vision-preview.',
+  //   symLink: 'gpt-4-1106-vision-preview',
+  //   // copied from symlinked
+  //   isPreview: true,
   //   contextWindow: 128000,
   //   maxCompletionTokens: 4096,
-  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
+  //   trainingDataCutoff: 'Apr 2023',
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
+  //   hidden: true, // Deprecated in favor of gpt-4-turbo
+  // },
+  // {
+  //   idPrefix: 'gpt-4-1106-vision-preview',
+  //   label: 'GPT-4 Preview Vision (1106)',
+  //   description: 'GPT-4 model with the ability to understand images, in addition to all other GPT-4 Turbo capabilities. This is a preview model, we recommend developers to now use gpt-4-turbo which includes vision capabilities. Returns a maximum of 4,096 output tokens.',
+  //   isPreview: true,
+  //   contextWindow: 128000,
+  //   maxCompletionTokens: 4096,
+  //   trainingDataCutoff: 'Apr 2023',
+  //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
+  //   hidden: true, // Deprecated in favor of gpt-4-turbo
   // },
 
   // GPT4-32k's
   // {
-  //   idPrefix: 'gpt-4-32k-0613',
-  //   label: 'GPT-4 32k (0613)',
-  //   description: 'Snapshot of gpt-4-32 from June 13th 2023.',
+  // idPrefix: 'gpt-4-32k',
+  //   label: 'GPT-4 32k',
+  //   description: 'Currently points to gpt-4-32k-0613. This model was never rolled out widely in favor of GPT-4 Turbo.',
+  //   symLink: 'gpt-4-32k-0613',
+    // copied from symlinked
   //   contextWindow: 32768,
+      // trainingDataCutoff: 'Sep 2021',
   //   interfaces: [LLM_IF_OAI_Chat],
-  //   isLatest: true,
+  //       hidden: true,
+
   // },
   // {
-  //   idPrefix: 'gpt-4-32k-0314',
-  //   label: 'GPT-4 32k (0314)',
-  //   description: 'Snapshot of gpt-4-32 from March 14th 2023. Will be deprecated on June 13th 2024 at the earliest.',
+   // idPrefix: 'gpt-4-32k-0613',
+   //  label: 'GPT-4 32k (0613)',
+   //  description: 'Snapshot of gpt-4-32k from June 13th 2023 with improved function calling support. This model was never rolled out widely in favor of GPT-4 Turbo.',
   //   contextWindow: 32768,
+      // trainingDataCutoff: 'Sep 2021',
+
   //   interfaces: [LLM_IF_OAI_Chat],
   //   hidden: true,
   // },
   // {
-  //   idPrefix: 'gpt-4-32k',
-  //   label: 'GPT-4 32k',
-  //   description: 'Currently points to gpt-4-32k-0613.',
-  //   symLink: 'gpt-4-32k-0613',
-  //   // copied
+   // idPrefix: 'gpt-4-32k-0314',
+   //  label: 'GPT-4 32k (0314)',
+   //  description: 'Snapshot of gpt-4-32 from March 14th 2023. Will be deprecated on June 13th 2024 at the earliest.',
   //   contextWindow: 32768,
+      // trainingDataCutoff: 'Sep 2021',
   //   interfaces: [LLM_IF_OAI_Chat],
   //   hidden: true,
   // },
 
   // // GPT4's
   // {
+      // isLatest: true,
   //   idPrefix: 'gpt-4-0613',
   //   label: 'GPT-4 (0613)',
-  //   description: 'Snapshot of gpt-4 from June 13th 2023 with function calling data. Data up to Sep 2021.',
+    // description: 'Snapshot of gpt-4 from June 13th 2023 with function calling data. Data up to Sep 2021.',
   //   contextWindow: 8192,
   //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-  //   isLatest: true,
+  
   // },
   // {
   //   idPrefix: 'gpt-4-0314',
   //   label: 'GPT-4 (0314)',
   //   description: 'Snapshot of gpt-4 from March 14th 2023 with function calling data. Data up to Sep 2021.',
   //   contextWindow: 8192,
+      // trainingDataCutoff: 'Sep 2021',
   //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
   //   hidden: true,
   // },
@@ -100,7 +153,8 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   label: 'GPT-4',
   //   description: 'Currently points to gpt-4-0613.',
   //   symLink: 'gpt-4-0613',
-  //   // copied
+    // hidden: true,
+    // copied from symlinked
   //   contextWindow: 8192,
   //   interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
   //   hidden: true,
@@ -113,6 +167,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   label: '3.5-Turbo Instruct',
   //   description: 'Similar capabilities as GPT-3 era models. Compatible with legacy Completions endpoint and not Chat Completions.',
   //   contextWindow: 4097,
+      // trainingDataCutoff: 'Sep 2021',
   //   interfaces: [/* NO: LLM_IF_OAI_Chat,*/ LLM_IF_OAI_Complete],
   //   hidden: true,
   // },
@@ -120,33 +175,17 @@ const _knownOpenAIChatModels: ManualMappings = [
 
   // 3.5-Turbo-16k's
   {
+    isLatest: true,
     idPrefix: 'gpt-3.5-turbo-0125',
     label: 'version 1',
     description: '',
     contextWindow: 16385,
     maxCompletionTokens: 4096,
+    trainingDataCutoff: 'Sep 2021',
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    isLatest: true,
   },
   {
-    idPrefix: 'gpt-3.5-turbo-1106',
-    label: 'version 0',
-    description: '',
-    contextWindow: 16385,
-    maxCompletionTokens: 4096,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
-    hidden: true,
-  },
-  // {
-  //   idPrefix: 'gpt-3.5-turbo-16k-0613',
-  //   label: '3.5-Turbo 16k (0613)',
-  //   description: 'Snapshot of gpt-3.5-turbo-16k from June 13th 2023.',
-  //   contextWindow: 16385,
-  //   interfaces: [LLM_IF_OAI_Chat],
-  //   hidden: true,
-  //   isLegacy: true,
-  // },
-  // {
+   
   //   idPrefix: 'gpt-3.5-turbo-16k',
   //   label: '3.5-Turbo 16k',
   //   description: 'Currently points to gpt-3.5-turbo-16k-0613.',
@@ -216,16 +255,35 @@ const _knownOpenAIChatModels: ManualMappings = [
   //   interfaces: [LLM_IF_OAI_Chat],
   //   hidden: true,
   // },
-] as const;
+] ;
 
-export function azureModelToModelDescription(azureDeploymentRef: string, openAIModelIdBase: string, modelCreated: number, modelUpdated?: number): ModelDescriptionSchema {
-  // if the deployment name mataches an OpenAI model prefix, use that
-  const known = _knownOpenAIChatModels.find(base => azureDeploymentRef == base.idPrefix);
-  return fromManualMapping(_knownOpenAIChatModels, known ? azureDeploymentRef : openAIModelIdBase, modelCreated, modelUpdated);
+const openAIModelsDenyList: string[] = [
+  /* /v1/audio/speech */
+  'tts-1-hd', 'tts-1',
+  /* /v1/embeddings */
+  'text-embedding-3-small', 'text-embedding-3-large', 'text-embedding-ada-002',
+  /* /v1/audio/transcriptions, /v1/audio/translations	*/
+  'whisper-1',
+  /* /v1/images/generations */
+  'dall-e-3', 'dall-e-2',
+  /* /v1/completions (Legacy)	 */
+  '-turbo-instruct', 'davinci-', 'babbage-',
+
+  // just Legacy models, that we should drop
+  'gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo-16k',
+];
+
+export function openAIModelFilter(model: OpenAIWire.Models.ModelDescription) {
+  return !openAIModelsDenyList.some(deny => model.id.includes(deny));
 }
 
 export function openAIModelToModelDescription(modelId: string, modelCreated: number, modelUpdated?: number): ModelDescriptionSchema {
   return fromManualMapping(_knownOpenAIChatModels, modelId, modelCreated, modelUpdated);
+}
+export function azureModelToModelDescription(azureDeploymentRef: string, openAIModelIdBase: string, modelCreated: number, modelUpdated?: number): ModelDescriptionSchema {
+  // if the deployment name mataches an OpenAI model prefix, use that
+  const known = _knownOpenAIChatModels.find(base => azureDeploymentRef == base.idPrefix);
+  return fromManualMapping(_knownOpenAIChatModels, known ? azureDeploymentRef : openAIModelIdBase, modelCreated, modelUpdated);
 }
 
 
@@ -609,8 +667,8 @@ export function perplexityAIModelDescriptions() {
 
 // Helpers
 
-type ManualMapping = ({ idPrefix: string, isLatest?: boolean, isLegacy?: boolean, symLink?: string } & Omit<ModelDescriptionSchema, 'id' | 'created' | 'updated'>);
-type ManualMappings = ManualMapping[];
+type ManualMapping = ({ idPrefix: string, isLatest?: boolean, isPreview?: boolean, isLegacy?: boolean, symLink?: string } & Omit<ModelDescriptionSchema, 'id' | 'created' | 'updated'>);
+
 
 function fromManualMapping(mappings: ManualMappings, id: string, created?: number, updated?: number, fallback?: ManualMapping): ModelDescriptionSchema {
 
@@ -620,8 +678,7 @@ function fromManualMapping(mappings: ManualMappings, id: string, created?: numbe
   // label for symlinks
   let label = known.label;
   if (known.symLink && id === known.idPrefix)
-    label = `🔗 ${known.label} → ${known.symLink}`;
-
+      label = `🔗 ${known.label} → ${known.symLink/*.replace(known.idPrefix, '')*/}`;
   // check whether this is a partial map, which indicates an unknown/new variant
   const suffix = id.slice(known.idPrefix.length).trim();
 
