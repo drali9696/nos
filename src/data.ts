@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type SystemPurposeId = 'Developer' | 'Custom' ;
+export type SystemPurposeId = 'Developer'  ;
 export const defaultSystemPurposeId: SystemPurposeId = 'Developer';
 
 export type SystemPurposeData = {
@@ -103,13 +103,13 @@ export const SystemPurposes: { [key in SystemPurposeId]: SystemPurposeData } = {
 //     call: { starters: ['Hey, how can I assist?', 'AI assistant ready. What do you need?', 'Ready to assist.', 'Hello.'] },
 //     voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' } },
 //   },
-  Custom: {
-    title: 'Custom',
-    description: 'User-defined identity:',
-    systemMessage: '',
-    symbol: '✨',
-    call: { starters: [''] },
-    voices: { elevenLabs: { voiceId: 'flq6f7yk4E4fJM5XTYuZ' } },
+  // Custom: {
+  //   title: 'Custom',
+  //   description: 'User-defined identity:',
+  //   systemMessage: '',
+  //   symbol: '✨',
+  //   call: { starters: [''] },
+  //   voices: { elevenLabs: { voiceId: 'flq6f7yk4E4fJM5XTYuZ' } },
   },
   // MedicalAI: {
   //     title: 'Medical AI',
