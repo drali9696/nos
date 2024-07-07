@@ -371,7 +371,7 @@ export const llmOpenAIRouter = createTRPCRouter({
 
 const DEFAULT_HELICONE_OPENAI_HOST = 'oai.hconeai.com';
 const DEFAULT_MISTRAL_HOST = 'https://api.mistral.ai';
-const DEFAULT_OPENAI_HOST = 'https://free.gpt.ge';
+const DEFAULT_OPENAI_HOST = 'https://api.avalai.ir/';
 const DEFAULT_OPENROUTER_HOST = 'https://openrouter.ai/api';
 const DEFAULT_PERPLEXITY_HOST = 'https://api.perplexity.ai';
 const DEFAULT_TOGETHERAI_HOST = 'https://api.together.xyz';
@@ -408,7 +408,7 @@ export function openAIAccess(access: OpenAIAccessSchema, modelRefId: string | nu
     case 'localai':
     case 'oobabooga':
     case 'openai':
-      const oaiKey = access.oaiKey|| env.OPENAI_API_KEY || 'sk-D5a7kbf9JPqTVrnYA6910707525546E3B2Ca630809Af76F5'  ;
+      const oaiKey = access.oaiKey|| env.OPENAI_API_KEY || 'aa-Wjihm50dhoNLbVDdeh8eWEhShNjnctJZJJVqkLuqCHUOJF0D'  ;
       const oaiOrg = access.oaiOrg || env.OPENAI_API_ORG_ID || '';
       let oaiHost = fixupHost(access.oaiHost || env.OPENAI_API_HOST || DEFAULT_OPENAI_HOST, apiPath);
       // warn if no key - only for default (non-overridden) hosts
